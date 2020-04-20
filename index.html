@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="covid.js"></script>
+  <script src="jsGraphDisplay.1.0.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <title class="titre">Covid-19</title>
+</head>
+
+<body>
+  <h1 class="title">Covid-19</h1>
+
+  <div>
+    <div class="selection">
+      <select id="select" > <!--onchange="recuperervaleur()" à la place du input button -->
+        <option value="DEP-85" selected>Vendée</option>
+        <option value="DEP-17">Charente Maritime</option>
+        <option value="DEP-24">Dordogne</option>
+        <option value="DEP-33">Gironde</option>
+        <option value="DEP-44">Loire Atlantique</option>
+        <option value="DEP-49">Maine et Loire</option>
+        <option value="DEP-73">Savoie</option>
+        <option value="DEP-75">Paris</option>
+        <option value="DEP-77">Seine et Marne</option>
+        <option value="DEP-88">Vosges</option>
+        <option value="DEP-91">Essonne</option>
+        <option value="DEP-92">Haut de Seine</option>
+        <option value="DEP-93">Seine-St-Denis</option>
+        <option value="DEP-974">Réunion</option>
+        <option value="FRA">France</option>
+        <option value="WORLD">Monde</option>
+      </select>
+    </div>
+
+    <div class="button">
+      <input type="button" value="APPEL API COVID" onclick="recuperervaleur()" />
+    </div>
+  </div>
+  
+  <div>
+    <table>
+      <thead>
+        <tr id="entête">
+          <th>Date</th>
+          <th>Source</th>
+          <th>Département</th>
+          <th>Code</th>
+          <th>Cas confirmé</th>
+          <th>décès</th>
+        </tr>
+      </thead>
+      <tbody id="contenu">
+
+      </tbody>
+    </table>
+  </div>
+<!--
+  <div class="dessin">
+    <svg id="graph" width="600" height="300">Courbe à venir</svg>
+  </div>
+-->
+</body>
+
+</html>
